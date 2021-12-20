@@ -31,8 +31,7 @@ loader.load('texture.png');*/
 //var texture = new THREE.TextureLoader().load('./stone.jpg')
 // Materials
 
-//var material = new THREE.MeshBasicMaterial({map: texture, overdraw:true});
-
+var material = new THREE.MeshBasicMaterial();
 var loader = new THREE.TextureLoader();
 
 // load a resource
@@ -42,9 +41,7 @@ loader.load(
     // Function when resource is loaded
     function ( texture ) {
         // do something with the texture
-        var material = new THREE.MeshBasicMaterial( {
-            map: texture
-         } );
+        material.map = texture;
     },
     // Function called when download progresses
     function ( xhr ) {
@@ -55,9 +52,8 @@ loader.load(
         console.log( 'An error happened' );
     }
 );
-//const material = new THREE.MeshBasicMaterial({color: 0xff0000})
 
-var sphere = new THREE.Mesh(geometry,material);
+var sphere = new THREE.Mesh(geometry, material);
 
 scene.add(sphere);
 
