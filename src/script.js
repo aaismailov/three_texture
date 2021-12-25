@@ -13,46 +13,12 @@ var canvas = document.querySelector('canvas.webgl')
 var scene = new THREE.Scene()
 
 // Objects
-var geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
-//var geometry = new THREE.PlaneGeometry();
-//var geometry = new THREE.SphereGeometry( 1, 32, 32 );
+var geometry = new THREE.SphereGeometry( 1, 32, 32 );
 
-// Mesh
-//const texture = new THREE.Texture();
-//var texture = THREE.ImageUtils.loadTexture('./t/texture.png', {}, function() {renderer.render(scene);});
-/*const loader = new THREE.ImageLoader();
-
-loader.addEventListener('load', function (event) {
-	texture.image = event.content;
-	texture.needsUpdate = true;
-});
-
-loader.load('texture.png');*/
-//var texture = new THREE.TextureLoader().load('./stone.jpg')
 // Materials
-
-var material = new THREE.MeshBasicMaterial();
-var loader = new THREE.TextureLoader();
-
+var loader = new THREE.TextureLoader().load('/textures/Earth.jpg');
+var material = new THREE.MeshBasicMaterial( {map:loader} );
 // load a resource
-loader.load(
-    // resource URL
-    './Stone.jpg',
-    // Function when resource is loaded
-    function ( texture ) {
-        // do something with the texture
-        material.map = texture;
-    },
-    // Function called when download progresses
-    function ( xhr ) {
-        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-    },
-    // Function called when download errors
-    function ( xhr ) {
-        console.log( 'An error happened' );
-    }
-);
-
 var sphere = new THREE.Mesh(geometry, material);
 
 scene.add(sphere);
@@ -99,8 +65,8 @@ camera.position.z = 2
 scene.add(camera)
 
 // Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
 
 /**
  * Renderer
