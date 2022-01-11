@@ -1,6 +1,7 @@
 import './style.css'
-import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+var THREE = window.THREE = require('three');
+require('three/examples/js/loaders/GLTFLoader');
 import * as dat from 'dat.gui'
 
 // Debug
@@ -16,17 +17,34 @@ var scene = new THREE.Scene()
 var geometry = new THREE.SphereGeometry( 1, 32, 32 );
 
 // Materials
-var loader = new THREE.TextureLoader().load('/textures/Earth.jpg');
-var material = new THREE.MeshBasicMaterial( {map:loader} );
+var loader3 = new THREE.TextureLoader().load('/textures/Earth.jpg');
+var material = new THREE.MeshBasicMaterial( {map:loader3} );
 // load a resource
 var sphere = new THREE.Mesh(geometry, material);
+
+//Satellite
+let loader2 = new THREE.GLTFLoader()
+loader2.load('/textures/hull.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+    satellite.position.x = 0
+    satellite.position.y = 0
+    satellite.position.z = 1.5
+    scene.add(gltf.scene)
+})
 
 scene.add(sphere);
 
 // Lights
 
-var pointLight = new THREE.PointLight(0xffffff, 0.1)
+var pointLight = new THREE.PointLight(0xffffff, 10)
 pointLight.position.x = 2
+pointLight.position.y = 3
+pointLight.position.z = 4
+scene.add(pointLight)
+
+var pointLight = new THREE.PointLight(0xffffff, 10)
+pointLight.position.x = -2
 pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
@@ -83,13 +101,26 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 var clock = new THREE.Clock()
 
+sphere.position.x = 0
+sphere.position.y = 0
+sphere.position.z = 0
+
 var tick = () =>
 {
 
     var elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    sphere.rotation.y = .5 * elapsedTime
+    sphere.rotation.y = .05 * elapsedTime
+    if(scene.children[4]) {
+        let delta = elapsedTime
+        let angularSpeed = THREE.Math.degToRad(2);
+        let angle = -angularSpeed * delta;
+        scene.children[4].children[0].rotation.y = .05 * elapsedTime;
+        scene.children[4].children[0].position.x = Math.cos(angle) * 1.5;
+        scene.children[4].children[0].position.z = Math.sin(angle) * 1.5;
+
+    }
 
     // Update Orbital Controls
     // controls.update()
