@@ -25,38 +25,6 @@ var material = new THREE.MeshBasicMaterial( {map:loader3} );
 var sphere = new THREE.Mesh(geometry, material);
 
 //Satellite
-/*
-var gltfLoader = new THREE.GLTFLoader();
-function loadAsset(path) {
-  return new Promise(resolve => {
-    gltfLoader.load(path, result => {
-           console.log('Success');
-            resolve(result);
-        });
-  });
-}
-
-var singleGeometry, material, mesh;
-
-Promise.all([
-  loadAsset('textures/hull.gltf'),
-  loadAsset('textures/SXC-SSS-03_1663093610.gltf'),
-])
-  .then(geometries => {
-	console.log(geometries);
-    //geometries.forEach(geometry => geometry);
-    // singleGeometry = new THREE.BufferGeometryUtils;
-    //singleGeometry = new THREE.BufferGeometry()
-	singleGeometry = new THREE.BufferGeometry();
-    singleGeometry = BufferGeometryUtils.mergeBufferGeometries(geometries, false)
-	
-    material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
-    mesh = new THREE.Mesh(singleGeometry, material);
-    scene.add(mesh);
-  })
-  .catch(err => {console.error(err);});*/
-
-var sat1, sat2, singleGeometry, material, mesh;
 const group = new THREE.Group();
 
 let loader2 = new THREE.GLTFLoader()
@@ -75,10 +43,138 @@ loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
     satellite.position.x = 0.03
     satellite.position.y = -0.03
     satellite.position.z = 0
-	sat2 = gltf.scene
 	
-	//sat2.parent = sat1
-    group.add(sat2)
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.x = Math.PI
+    satellite.position.x = 0.03
+    satellite.position.y = -0.03
+    satellite.position.z = 0.2
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.x = Math.PI / 2
+    satellite.position.x = 0.03
+    satellite.position.y = 0
+    satellite.position.z = 0.17
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.x = Math.PI / 2
+    satellite.position.x = 0.03
+    satellite.position.y = 0
+    satellite.position.z = 0.1
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.x = Math.PI / 2
+    satellite.position.x = 0.03
+    satellite.position.y = 0
+    satellite.position.z = 0.03
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.x = -Math.PI / 2
+    satellite.position.x = 0.03
+    satellite.position.y = -0.06
+    satellite.position.z = 0.03
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.x = -Math.PI / 2
+    satellite.position.x = 0.03
+    satellite.position.y = -0.06
+    satellite.position.z = 0.1
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.x = -Math.PI / 2
+    satellite.position.x = 0.03
+    satellite.position.y = -0.06
+    satellite.position.z = 0.17
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.y = Math.PI / 2
+    satellite.position.x = 0
+    satellite.position.y = -0.03
+    satellite.position.z = 0.17
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.y = Math.PI / 2
+    satellite.position.x = 0
+    satellite.position.y = -0.03
+    satellite.position.z = 0.1
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.y = Math.PI / 2
+    satellite.position.x = 0
+    satellite.position.y = -0.03
+    satellite.position.z = 0.03
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.y = -Math.PI / 2
+    satellite.position.x = 0.06
+    satellite.position.y = -0.03
+    satellite.position.z = 0.03
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.y = -Math.PI / 2
+    satellite.position.x = 0.06
+    satellite.position.y = -0.03
+    satellite.position.z = 0.1
+	
+    group.add(gltf.scene)
+})
+loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
+    var satellite = gltf.scene.children[0]
+    satellite.scale.set(0.0006, 0.0006, 0.0006)
+	satellite.rotation.y = -Math.PI / 2
+    satellite.position.x = 0.06
+    satellite.position.y = -0.03
+    satellite.position.z = 0.17
+	
+    group.add(gltf.scene)
 })
 scene.add(group)
 
@@ -168,24 +264,6 @@ var tick = () =>
 	};
     // Update objects
     sphere.rotation.y = .05 * elapsedTime
-    /*if(scene.children[4]) {
-        let delta = elapsedTime
-        let angularSpeed = THREE.Math.degToRad(2);
-        let angle = -angularSpeed * delta;
-        scene.children[4].children[0].rotation.y = .05 * elapsedTime;
-        scene.children[4].children[0].position.x = Math.cos(angle) * 1.5;
-        scene.children[4].children[0].position.z = Math.sin(angle) * 1.5;
-
-    }
-	if(scene.children[5]) {
-        let delta = elapsedTime
-        let angularSpeed = THREE.Math.degToRad(2);
-        let angle = -angularSpeed * delta;
-        scene.children[5].children[0].rotation.y = .05 * elapsedTime;
-        scene.children[5].children[0].position.x = Math.cos(angle) * 1.5;
-        scene.children[5].children[0].position.z = Math.sin(angle) * 1.5;
-
-    }*/
 
     // Update Orbital Controls
     // controls.update()
