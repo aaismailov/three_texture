@@ -2,7 +2,6 @@ import './style.css'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 var THREE = window.THREE = require('three');
 require('three/examples/js/loaders/GLTFLoader');
-import { BufferGeometryUtils } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 import * as dat from 'dat.gui'
 
