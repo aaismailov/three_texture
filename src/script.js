@@ -36,145 +36,27 @@ loader2.load('/textures/hull.gltf', function (gltf){
 	
     group.add(gltf.scene)
 })
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-    satellite.position.x = 0.03
-    satellite.position.y = -0.03
-    satellite.position.z = 0
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.x = Math.PI
-    satellite.position.x = 0.03
-    satellite.position.y = -0.03
-    satellite.position.z = 0.2
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.x = Math.PI / 2
-    satellite.position.x = 0.03
-    satellite.position.y = 0
-    satellite.position.z = 0.17
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.x = Math.PI / 2
-    satellite.position.x = 0.03
-    satellite.position.y = 0
-    satellite.position.z = 0.1
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.x = Math.PI / 2
-    satellite.position.x = 0.03
-    satellite.position.y = 0
-    satellite.position.z = 0.03
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.x = -Math.PI / 2
-    satellite.position.x = 0.03
-    satellite.position.y = -0.06
-    satellite.position.z = 0.03
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.x = -Math.PI / 2
-    satellite.position.x = 0.03
-    satellite.position.y = -0.06
-    satellite.position.z = 0.1
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.x = -Math.PI / 2
-    satellite.position.x = 0.03
-    satellite.position.y = -0.06
-    satellite.position.z = 0.17
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.y = Math.PI / 2
-    satellite.position.x = 0
-    satellite.position.y = -0.03
-    satellite.position.z = 0.17
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.y = Math.PI / 2
-    satellite.position.x = 0
-    satellite.position.y = -0.03
-    satellite.position.z = 0.1
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.y = Math.PI / 2
-    satellite.position.x = 0
-    satellite.position.y = -0.03
-    satellite.position.z = 0.03
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.y = -Math.PI / 2
-    satellite.position.x = 0.06
-    satellite.position.y = -0.03
-    satellite.position.z = 0.03
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.y = -Math.PI / 2
-    satellite.position.x = 0.06
-    satellite.position.y = -0.03
-    satellite.position.z = 0.1
-	
-    group.add(gltf.scene)
-})
-loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf){
-    var satellite = gltf.scene.children[0]
-    satellite.scale.set(0.0006, 0.0006, 0.0006)
-	satellite.rotation.y = -Math.PI / 2
-    satellite.position.x = 0.06
-    satellite.position.y = -0.03
-    satellite.position.z = 0.17
-	
-    group.add(gltf.scene)
-})
+
+let physInfoPanels = [[0, 0.03, -0.03, 0, 'x'],[Math.PI, 0.03, -0.03, 0.2, 'x'],
+[Math.PI / 2, 0.03, 0, 0.17, 'x'],[Math.PI / 2, 0.03, 0, 0.1, 'x'], [Math.PI / 2, 0.03, 0, 0.03, 'x'],
+[-Math.PI / 2, 0.03, -0.06, 0.03, 'x'],[-Math.PI / 2, 0.03, -0.06, 0.1, 'x'], [-Math.PI / 2, 0.03, -0.06, 0.17, 'x'],
+[Math.PI / 2, 0, -0.03, 0.17, 'y'], [Math.PI / 2, 0, -0.03, 0.1, 'y'], [Math.PI / 2, 0, -0.03, 0.03, 'y'],
+[-Math.PI / 2, 0.06, -0.03, 0.03, 'y'],[-Math.PI / 2, 0.06, -0.03, 0.1, 'y'],[-Math.PI / 2, 0.06, -0.03, 0.17, 'y']]
+
+for(let i = 0; i < 14; i++) {
+	loader2.load('/textures/SXC-SSS-03_1663093610.gltf', function (gltf) {
+		var satellite = gltf.scene.children[0]
+		satellite.scale.set(0.0006, 0.0006, 0.0006)
+		if(physInfoPanels[i][4] == 'x')
+			satellite.rotation.x = physInfoPanels[i][0]
+		else
+			satellite.rotation.y = physInfoPanels[i][0]
+			satellite.position.x = physInfoPanels[i][1]
+			satellite.position.y = physInfoPanels[i][2]
+			satellite.position.z = physInfoPanels[i][3]
+		group.add(gltf.scene)
+	})
+}
 scene.add(group)
 
 scene.add(sphere);
